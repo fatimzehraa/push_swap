@@ -1,23 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap.h                                        :+:      :+:    :+:   */
+/*   ft_lstlast.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: fael-bou <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/05/30 21:57:28 by fael-bou          #+#    #+#             */
-/*   Updated: 2022/06/01 19:37:06 by fael-bou         ###   ########.fr       */
+/*   Created: 2021/11/25 19:58:43 by fael-bou          #+#    #+#             */
+/*   Updated: 2022/04/20 00:53:28 by fael-bou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PUSH_SWAP_H
-# define PUSH_SWAP_H
-
-#include <stdlib.h>
-#include <unistd.h>
-#include <stdio.h>
 #include "list.h"
+#include <stdlib.h>
 
-void sa(t_list **stack_a);
+t_list	*ft_lstlast(t_list *lst)
+{
+	t_list	*last_node;
 
-#endif
+	last_node = NULL;
+	while (lst)
+	{
+		last_node = lst;
+		lst = lst->next;
+	}
+	return (last_node);
+}

@@ -1,23 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap.h                                        :+:      :+:    :+:   */
+/*   ft_lstclear.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: fael-bou <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/05/30 21:57:28 by fael-bou          #+#    #+#             */
-/*   Updated: 2022/06/01 19:37:06 by fael-bou         ###   ########.fr       */
+/*   Created: 2021/11/25 23:17:57 by fael-bou          #+#    #+#             */
+/*   Updated: 2022/06/01 19:47:39 by fael-bou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PUSH_SWAP_H
-# define PUSH_SWAP_H
-
-#include <stdlib.h>
-#include <unistd.h>
-#include <stdio.h>
 #include "list.h"
+#include <stdlib.h>
 
-void sa(t_list **stack_a);
+void	ft_lstclear(t_list **lst, void (*del)(int))
+{
+	t_list	*node;
+	t_list	*next;
 
-#endif
+	node = *lst;
+	while (node)
+	{
+		next = node->next;
+		ft_lstdelone(node, del);
+		node = next;
+	}
+	*lst = NULL;
+}

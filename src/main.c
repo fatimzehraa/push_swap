@@ -1,32 +1,18 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   main.c                                             :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: fael-bou <marvin@42.fr>                    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/06/01 12:02:22 by fael-bou          #+#    #+#             */
+/*   Updated: 2022/06/01 19:39:46 by fael-bou         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+#include "list.h"
+#include "push_swap.h"
 #include <stdio.h>
 #include <stdlib.h>
-
-t_list *lst_new(int content)
-{
-	t_list *node;
-
-	node = (t_list *)maloc(sizeof(t_list));
-	if (node == NULL)
-		return (NULL);
-	node->content = content;
-	node->next = NULL;
-	return (node);
-}
-
-void lst_add_front(t_list **list, t_list *node)
-{
-	if (list == NULL)
-		return;
-	node->next = *list;
-	*list = node;
-}
-
-void push(t_list **x, int value)
-{
-	lst_add_front(x, lst_new(value));
-	
-
-}
 
 int ft_atoi(char *str)
 {
@@ -53,15 +39,24 @@ int ft_atoi(char *str)
 
 int main (int argc, char *argv[])
 {
-	t_list *a;
-	t_list *b;
+	t_list *stack_a;
+//	t_list *stack_b;
 	int i;
 
-	i = 0;
-	a = lst_new(ft_atoi(argv[i]));
-	while (i <= argc)
+	stack_a = NULL;
+	i = 1;
+	while (i < argc)
 	{
-		lst_add_front(&a, lst_new(ft_atoi(argv[i])));
+		ft_lstadd_front(&stack_a, ft_lstnew(ft_atoi(argv[i])));
+		i++;
+	}
+	printf("hh\n");
+	sa(&stack_a);
+	printf("%p\n", stack_a);
+	while (stack_a)
+	{
+		printf("%d\n", stack_a->content);
+		stack_a = stack_a->next;
 	}
 	return 0;
 }

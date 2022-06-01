@@ -1,23 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap.h                                        :+:      :+:    :+:   */
+/*   swap_utils.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: fael-bou <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/05/30 21:57:28 by fael-bou          #+#    #+#             */
-/*   Updated: 2022/06/01 19:37:06 by fael-bou         ###   ########.fr       */
+/*   Created: 2022/06/01 11:58:56 by fael-bou          #+#    #+#             */
+/*   Updated: 2022/06/01 21:32:28 by fael-bou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PUSH_SWAP_H
-# define PUSH_SWAP_H
-
-#include <stdlib.h>
-#include <unistd.h>
+#include "push_swap.h"
 #include <stdio.h>
-#include "list.h"
 
-void sa(t_list **stack_a);
+void sa(t_list **stack_a)
+{
+	int tmp;
 
-#endif
+	if (ft_lstsize(*stack_a) > 1)
+	{
+		tmp = (*stack_a)->content;
+		(*stack_a)->content = (*stack_a)->next->content;
+		(*stack_a)->next->content = tmp;
+	}
+	//{
+	//	tmp = (*stack_a)->next->next;
+	//	(*stack_a)->next->next = (*stack_a)->next;
+	//	(*stack_a)->next = tmp;
+	//	(*stack_a) = (*stack_a)->next;
+	//}
+	else
+		perror("stack_a has less than two elements");
+}
