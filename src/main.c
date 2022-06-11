@@ -6,7 +6,7 @@
 /*   By: fael-bou <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/01 12:02:22 by fael-bou          #+#    #+#             */
-/*   Updated: 2022/06/01 19:39:46 by fael-bou         ###   ########.fr       */
+/*   Updated: 2022/06/10 20:05:21 by fatimzehra       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "list.h"
@@ -44,18 +44,39 @@ int main (int argc, char *argv[])
 	int i;
 
 	stack_a = NULL;
+//	stack_b = NULL;
 	i = 1;
 	while (i < argc)
 	{
-		ft_lstadd_front(&stack_a, ft_lstnew(ft_atoi(argv[i])));
+		ft_lstadd_back(&stack_a, ft_lstnew(ft_atoi(argv[i])));
 		i++;
 	}
-	printf("hh\n");
-	sa(&stack_a);
-	printf("%p\n", stack_a);
+//	pb(&stack_a, &stack_b);
+//	while (stack_b)
+//	{
+//		printf("stack_b %d\n", stack_b->content);
+//		stack_b = stack_b->next;
+//	}
+//	rra(&stack_a);
+	t_list *curr = stack_a;
+	while (curr)
+	{
+		printf("stack_a->content : %d stack_a->position : %d\n", curr->content, curr->p);
+		curr = curr->next;
+	}
+	printf("\n");
+	curr = stack_a;
+	position(stack_a);
+	while (curr)
+	{
+		printf("stack_a->content : %d stack_a->position : %d\n", curr->content, curr->p);
+		curr = curr->next;
+	}
+	printf("\n");
+	sort_3(&stack_a);
 	while (stack_a)
 	{
-		printf("%d\n", stack_a->content);
+		printf("stack_a->content : %d stack_a->position : %d\n", stack_a->content, stack_a->p);
 		stack_a = stack_a->next;
 	}
 	return 0;

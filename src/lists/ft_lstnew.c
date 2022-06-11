@@ -6,7 +6,7 @@
 /*   By: fael-bou <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/25 18:08:35 by fael-bou          #+#    #+#             */
-/*   Updated: 2022/06/01 19:40:26 by fael-bou         ###   ########.fr       */
+/*   Updated: 2022/06/10 12:53:56 by fatimzehra       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,7 @@ t_list	*ft_lstnew(int content)
 	if (lst == NULL)
 		return (NULL);
 	lst->content = content;
+	lst->p = 0;
 	lst->next = NULL;
 	return (lst);
 }

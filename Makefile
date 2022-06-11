@@ -6,7 +6,7 @@
 #    By: fael-bou <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/05/31 11:06:19 by fael-bou          #+#    #+#              #
-#    Updated: 2022/06/01 19:44:17 by fael-bou         ###   ########.fr        #
+#    Updated: 2022/06/10 20:07:23 by fatimzehra       ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -16,7 +16,8 @@ INCLUDE = -I./inc
 
 BUILD_DIR = build
 
-FILES = main.o push_utils.o \
+FILES = main.o position.o sort.o\
+	utils/push.o utils/swap.o utils/rotate.o utils/reverse_rotate.o\
 	lists/ft_lstadd_back.o lists/ft_lstclear.o \
 	lists/ft_lstsize.o lists/ft_lstadd_front.o \
 	lists/ft_lstdelone.o lists/ft_lstlast.o lists/ft_lstnew.o
@@ -41,4 +42,4 @@ fclean : clean
 
 re : fclean all
 
-.PHONY : all clean fclean
+.PHONY : all clean fclean re
