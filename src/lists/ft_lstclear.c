@@ -6,14 +6,14 @@
 /*   By: fael-bou <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/25 23:17:57 by fael-bou          #+#    #+#             */
-/*   Updated: 2022/06/01 19:47:39 by fael-bou         ###   ########.fr       */
+/*   Updated: 2022/06/19 08:33:45 by fatimzehra       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "list.h"
 #include <stdlib.h>
 
-void	ft_lstclear(t_list **lst, void (*del)(int))
+void	ft_lstclear(t_list **lst)
 {
 	t_list	*node;
 	t_list	*next;
@@ -22,7 +22,7 @@ void	ft_lstclear(t_list **lst, void (*del)(int))
 	while (node)
 	{
 		next = node->next;
-		ft_lstdelone(node, del);
+		free(node);
 		node = next;
 	}
 	*lst = NULL;

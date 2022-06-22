@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   rotate_utils.c                                     :+:      :+:    :+:   */
+/*   rotate.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: fatimzehra </var/spool/mail/fatimzehra>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/03 15:21:38 by fatimzehra        #+#    #+#             */
-/*   Updated: 2022/06/06 00:13:21 by fatimzehra       ###   ########.fr       */
+/*   Updated: 2022/06/21 08:11:59 by fatimzehra       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,32 +14,33 @@
 #include "list.h"
 #include "push_swap.h"
 
-void ra(t_list **stack_a)
+void	rotate(t_list **stack)
 {
 	t_list *last_node;
 
-	if (ft_lstsize(*stack_a) < 2)
+	if (ft_lstsize(*stack) < 2)
 		return ;
-	last_node = ft_lstlast(*stack_a);
-	last_node->next = *stack_a;
-	*stack_a = (*stack_a)->next;
+	last_node = ft_lstlast(*stack);
+	last_node->next = *stack;
+	*stack = (*stack)->next;
 	last_node->next->next = NULL;
 }
 
-void rb(t_list **stack_b)
+void	ra(t_list **stack_a)
 {
-	t_list *last_node;
+	rotate(stack_a);
+	ft_putstr("ra");
+}
 
-	if (ft_lstsize(*stack_b) < 2)
-		return ;
-	last_node = ft_lstlast(*stack_b);
-	last_node->next = *stack_b;
-	*stack_b = (*stack_b)->next;
-	last_node->next->next = NULL;
+void	rb(t_list **stack_b)
+{
+	rotate(stack_b);
+	ft_putstr("rb");
 }
 
 void rr(t_list **stack_a, t_list **stack_b)
 {
-	ra(stack_a);
-	rb(stack_b);
+	rotate(stack_a);
+	rotate(stack_b);
+	ft_putstr("rr");
 }

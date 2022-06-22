@@ -6,7 +6,7 @@
 /*   By: fatimzehra </var/spool/mail/fatimzehra>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/06 18:02:47 by fatimzehra        #+#    #+#             */
-/*   Updated: 2022/06/10 13:03:40 by fatimzehra       ###   ########.fr       */
+/*   Updated: 2022/06/12 13:35:46 by fatimzehra       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,4 +31,19 @@ void	position(t_list *stack_a)
 		}
 		stack_a = stack_a->next;
 	}
+}
+
+int	p_index(t_list *stack_a, int position)
+{
+	int i;
+
+	i = 0;
+	while (stack_a)
+	{
+		if (stack_a->p == position)
+			break ;
+		i++;
+		stack_a = stack_a->next;
+	}
+	return (i);
 }

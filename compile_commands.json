@@ -1,0 +1,146 @@
+[
+ {
+  "directory": "/home/fatimzehra/Desktop/projects/push_swap",
+  "arguments": [
+   "cc",
+   "-Wall",
+   "-Wextra",
+   "-Werror",
+   "-g",
+   "-I./inc",
+   "-c",
+   "src/main.c",
+   "-o",
+   "build/main.o"
+  ],
+  "file": "src/main.c"
+ },
+ {
+  "directory": "/home/fatimzehra/Desktop/projects/push_swap",
+  "arguments": [
+   "cc",
+   "-Wall",
+   "-Wextra",
+   "-Werror",
+   "-g",
+   "-I./inc",
+   "-c",
+   "src/swap_utils.c",
+   "-o",
+   "build/swap_utils.o"
+  ],
+  "file": "src/swap_utils.c"
+ },
+ {
+  "directory": "/home/fatimzehra/Desktop/projects/push_swap",
+  "arguments": [
+   "cc",
+   "-Wall",
+   "-Wextra",
+   "-Werror",
+   "-g",
+   "-I./inc",
+   "-c",
+   "src/lists/ft_lstadd_back.c",
+   "-o",
+   "build/lists/ft_lstadd_back.o"
+  ],
+  "file": "src/lists/ft_lstadd_back.c"
+ },
+ {
+  "directory": "/home/fatimzehra/Desktop/projects/push_swap",
+  "arguments": [
+   "cc",
+   "-Wall",
+   "-Wextra",
+   "-Werror",
+   "-g",
+   "-I./inc",
+   "-c",
+   "src/lists/ft_lstclear.c",
+   "-o",
+   "build/lists/ft_lstclear.o"
+  ],
+  "file": "src/lists/ft_lstclear.c"
+ },
+ {
+  "directory": "/home/fatimzehra/Desktop/projects/push_swap",
+  "arguments": [
+   "cc",
+   "-Wall",
+   "-Wextra",
+   "-Werror",
+   "-g",
+   "-I./inc",
+   "-c",
+   "src/lists/ft_lstsize.c",
+   "-o",
+   "build/lists/ft_lstsize.o"
+  ],
+  "file": "src/lists/ft_lstsize.c"
+ },
+ {
+  "directory": "/home/fatimzehra/Desktop/projects/push_swap",
+  "arguments": [
+   "cc",
+   "-Wall",
+   "-Wextra",
+   "-Werror",
+   "-g",
+   "-I./inc",
+   "-c",
+   "src/lists/ft_lstadd_front.c",
+   "-o",
+   "build/lists/ft_lstadd_front.o"
+  ],
+  "file": "src/lists/ft_lstadd_front.c"
+ },
+ {
+  "directory": "/home/fatimzehra/Desktop/projects/push_swap",
+  "arguments": [
+   "cc",
+   "-Wall",
+   "-Wextra",
+   "-Werror",
+   "-g",
+   "-I./inc",
+   "-c",
+   "src/lists/ft_lstdelone.c",
+   "-o",
+   "build/lists/ft_lstdelone.o"
+  ],
+  "file": "src/lists/ft_lstdelone.c"
+ },
+ {
+  "directory": "/home/fatimzehra/Desktop/projects/push_swap",
+  "arguments": [
+   "cc",
+   "-Wall",
+   "-Wextra",
+   "-Werror",
+   "-g",
+   "-I./inc",
+   "-c",
+   "src/lists/ft_lstlast.c",
+   "-o",
+   "build/lists/ft_lstlast.o"
+  ],
+  "file": "src/lists/ft_lstlast.c"
+ },
+ {
+  "directory": "/home/fatimzehra/Desktop/projects/push_swap",
+  "arguments": [
+   "cc",
+   "-Wall",
+   "-Wextra",
+   "-Werror",
+   "-g",
+   "-I./inc",
+   "-c",
+   "src/lists/ft_lstnew.c",
+   "-o",
+   "build/lists/ft_lstnew.o"
+  ],
+  "file": "src/lists/ft_lstnew.c"
+ }
+]
