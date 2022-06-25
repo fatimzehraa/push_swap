@@ -6,7 +6,7 @@
 /*   By: fatimzehra </var/spool/mail/fatimzehra>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/21 09:14:38 by fatimzehra        #+#    #+#             */
-/*   Updated: 2022/06/21 09:15:22 by fatimzehra       ###   ########.fr       */
+/*   Updated: 2022/06/24 17:07:00 by fatimzehra       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,5 +42,6 @@ int	free_ctx(t_ctx *ctx, int is_error)
 		ft_lstclear(&(ctx->stack_b));
 	if (is_error)
 		ft_putstr("Error\n");
-	return (is_error);
+	//return (is_error);
+	return (0);
 }

@@ -6,7 +6,7 @@
 /*   By: fael-bou <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/30 21:57:28 by fael-bou          #+#    #+#             */
-/*   Updated: 2022/06/22 14:22:44 by fatimzehra       ###   ########.fr       */
+/*   Updated: 2022/06/24 19:26:13 by fatimzehra       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,9 +53,10 @@ void	sort_3(t_list **stack_a, int start);
 void	push_node_a(t_list **stack_a, t_list **stack_b, int position, int mid);
 void	push_node_b(t_list **stack_a, t_list **stack_b, int position, int mid);
 void	sort_5(t_list **stack_a, t_list **stack_b);
-void	sort_100(t_list **stack_a, t_list **stack_b);
+void	sort_100(t_list **stack_a, t_list **stack_b, int chunk);
 void	sort(int size_a, t_list **stack_a, t_list **stack_b);
 int		is_sorted(t_list *stack_a);
+int	get_closest(int position, t_list *stack_b);
 
 void	free_tab(char **splitted_nb);
 void	init_ctx(t_ctx *ctx);

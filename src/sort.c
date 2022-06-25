@@ -6,7 +6,7 @@
 /*   By: fatimzehra </var/spool/mail/fatimzehra>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/10 14:09:12 by fatimzehra        #+#    #+#             */
-/*   Updated: 2022/06/22 19:40:47 by fatimzehra       ###   ########.fr       */
+/*   Updated: 2022/06/25 20:48:13 by fatimzehra       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,98 +57,76 @@ void	sort_5(t_list **stack_a, t_list **stack_b)
 	pa(stack_a, stack_b);
 }
 
-void	sort_100(t_list **stack_a, t_list **stack_b)
+
+void	chunk_size(t_list **stack_a, t_list **stack_b, int div)
+{
+	int size;
+	int chunk;
+
+	size = ft_lstsize(*stack_a);
+	chunk = size/div;
+
+	sort_100(stack_a, stack_b, chunk);
+}
+
+void	push_chunks1(t_list **stack_a, t_list **stack_b, int chunk)
 {
 	int x;
 	int i;
 
-	x = 24;
+	x = chunk - 1;
 	while (*stack_a)
 	{
 		i = 0;
-		while (i < 10 && *stack_a)
+		while (i < chunk && *stack_a)
 		{
-			if ((*stack_a)->p <= x/2)
+			if ((*stack_a)->p <= x - (chunk/2))
 			{
 				pb(stack_a, stack_b);
-				rr(stack_a, stack_b);
+				if (*stack_a) 
+				{		
+					if ((*stack_a)->p > x)
+						rr(stack_a, stack_b);
+					else 
+						rb(stack_b);
+				}
+				else
+					rb(stack_b);
+				i++;
+			}
+			else if ((*stack_a)->p <= x)
+			{
+				pb(stack_a, stack_b);
 				i++;
 			}
 			else
-				if ((*stack_a)->p <= x)
-				{
-					pb(stack_a, stack_b);
-					i++;
-				}
-				else
-					ra(stack_a);
+				ra(stack_a);
 		}
-		x += 25;
-	}
-//	int j = 0;
-	int size = ft_lstsize(*stack_b);
-	while (size)
-	{
-		push_node_a(stack_a, stack_b, size - 1, size/2);
-		size--;
+		x += chunk;
 	}
 }
 
-void	sort_500(t_list **stack_a, t_list **stack_b)
+void	sort_100(t_list **stack_a, t_list **stack_b, int chunk)
 {
-	int x;
-	int i;
+	int size;
 
-	x = 49;
-	while (*stack_a)
+	push_chunks(stack_a, stack_b, chunk);
+	size = ft_lstsize(*stack_b);
+	while (size--)
 	{
-		i = 0;
-		while (i < 20 && *stack_a)
+		if (size == 0 
+				|| get_closest(size, *stack_b) < get_closest(size-1, *stack_b))
+			push_node_a(stack_a, stack_b, size, size/2);
+		else 
 		{
-			if ((*stack_a)->p <= x/2)
-			{
-				pb(stack_a, stack_b);
-				rr(stack_a, stack_b);
-				i++;
-			}
-			else
-				if ((*stack_a)->p <= x)
-				{
-					pb(stack_a, stack_b);
-					i++;
-				}
-				else
-					ra(stack_a);
+			push_node_a(stack_a, stack_b, size - 1, size/2);
+			size--;
+			push_node_a(stack_a, stack_b, size + 1, size/2);
+			sa(stack_a);
 		}
-		x += 50;
-	}
-//	int j = 0;
-	int size = ft_lstsize(*stack_b);
-	while (size)
-	{
-		push_node_a(stack_a, stack_b, size - 1, size/2);
-		size--;
 	}
 }
-//void	sort_1(t_list **stack_a, t_list **stack_b)
-//{
-//	int	i;
-//	int	size;
-//
-//	size = ft_lstsize(*stack_a);
-//	i = 0;
-//	while (i < size)
-//	{
-//		push_node(stack_a, stack_b, i, size/2);
-//		i++;
-//	}
-//	i = 0;
-//	while (i < ft_lstsize(*stack_b))
-//	{
-//		pa(stack_a, stack_b);
-//		i++;
-//	}
-//}
+
 
 void	sort(int size_a, t_list **stack_a, t_list **stack_b)
 {
@@ -164,9 +142,9 @@ void	sort(int size_a, t_list **stack_a, t_list **stack_b)
 		sort_3(stack_a, 0);
 	else if (size_a <= 5)
 		sort_5(stack_a, stack_b);
-	else if (size_a <= 100)
-		sort_100(stack_a, stack_b);
-	else if (size_a <= 500)
-		sort_500(stack_a, stack_b);
+	else if (size_a <= 200)
+		chunk_size(stack_a, stack_b, 5);
+	else 
+		chunk_size(stack_a, stack_b, 9);
 
 }

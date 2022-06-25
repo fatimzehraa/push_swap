@@ -6,7 +6,7 @@
 /*   By: fatimzehra </var/spool/mail/fatimzehra>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/17 13:55:29 by fatimzehra        #+#    #+#             */
-/*   Updated: 2022/06/22 15:05:58 by fatimzehra       ###   ########.fr       */
+/*   Updated: 2022/06/24 20:55:52 by fatimzehra       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "list.h"
@@ -61,6 +61,8 @@ int	is_all_number(char **str)
 	while (str[i])
 	{
 		j = 0;
+		if (str[i][j] == '-')
+			j++;
 		while (str[i][j])
 		{
 			if (str[i][j] < '0' || str[i][j] > '9')

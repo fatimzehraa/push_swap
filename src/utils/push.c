@@ -6,7 +6,7 @@
 /*   By: fael-bou <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/30 21:56:23 by fael-bou          #+#    #+#             */
-/*   Updated: 2022/06/21 17:14:07 by fatimzehra       ###   ########.fr       */
+/*   Updated: 2022/06/25 13:13:37 by fatimzehra       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -84,4 +84,22 @@ void	push_node_a(t_list **stack_a, t_list **stack_b, int position, int mid)
 		}
 		pa(stack_a, stack_b);
 	}
+}
+
+int	get_closest(int position, t_list *stack_b)
+{
+	int i;
+
+	i = 0;
+	while (stack_b)
+	{
+		if (stack_b->p == position)
+			break ;
+		i++;
+		stack_b = stack_b->next;
+	}
+	if (i < ft_lstsize(stack_b)/2)
+		return (i);
+	else 
+		return (ft_lstsize(stack_b) - i);
 }

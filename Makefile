@@ -6,7 +6,7 @@
 #    By: fael-bou <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/05/31 11:06:19 by fael-bou          #+#    #+#              #
-#    Updated: 2022/06/22 17:41:08 by fatimzehra       ###   ########.fr        #
+#    Updated: 2022/06/25 14:53:48 by fatimzehra       ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -22,8 +22,9 @@ FILES = main.o position.o sort.o split.o libft.o free.o duplicate.o\
 	lists/ft_lstsize.o lists/ft_lstadd_front.o \
 	lists/ft_lstlast.o lists/ft_lstnew.o
 
-BONUS_FILES = checker_bonus.o position.o sort.o split.o libft.o free.o duplicate.o\
-	utils/push.o utils/swap.o utils/rotate.o utils/reverse_rotate.o\
+BONUS_FILES = checker_bonus.o position.o split.o libft.o free.o duplicate.o\
+	utils/push_bonus.o utils/swap_bonus.o utils/rotate_bonus.o\
+	utils/reverse_rotate_bonus.o\
 	lists/ft_lstadd_back.o lists/ft_lstclear.o \
 	lists/ft_lstsize.o lists/ft_lstadd_front.o \
 	lists/ft_lstlast.o lists/ft_lstnew.o \
