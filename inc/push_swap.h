@@ -6,7 +6,7 @@
 /*   By: fael-bou <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/30 21:57:28 by fael-bou          #+#    #+#             */
-/*   Updated: 2022/06/26 12:31:21 by fael-bou         ###   ########.fr       */
+/*   Updated: 2022/06/26 15:38:29 by fael-bou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,7 +36,7 @@ void	rra(t_list **stack_a);
 void	rrb(t_list **stack_b);
 void	rrr(t_list **stack_a, t_list **stack_b);
 int		ft_strlen(const char *s);
-int		ft_atoi(char *str);
+long	ft_atoi(char *str);
 int		ft_strchr(char *str, char c);
 int		ft_strcmp(char *s1, char *s2);
 int		is_all_number(char **str);

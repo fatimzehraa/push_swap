@@ -6,7 +6,7 @@
 /*   By: fael-bou <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/22 09:08:42 by fael-bou          #+#    #+#             */
-/*   Updated: 2022/06/26 12:32:27 by fael-bou         ###   ########.fr       */
+/*   Updated: 2022/06/26 15:09:56 by fael-bou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,7 +52,7 @@ void	check(t_list *stack_a, t_list *stack_b)
 		ft_putstr("KO");
 }
 
-int	read_instractions(t_ctx ctx)
+int	read_instractions(t_ctx *ctx)
 {
 	char	*line;
 
@@ -61,7 +61,7 @@ int	read_instractions(t_ctx ctx)
 		line = get_next_line(0);
 		if (line == 0)
 			break ;
-		if (!do_instructions(&ctx.stack_a, &ctx.stack_b, line))
+		if (!do_instructions(&ctx->stack_a, &ctx->stack_b, line))
 			return (0);
 	}
 	return (1);
@@ -88,7 +88,7 @@ int	main(int argc, char**argv)
 		i++;
 	}
 	position(ctx.stack_a);
-	if (read_instractions(ctx) == 0)
+	if (read_instractions(&ctx) == 0)
 		return (free_ctx(&ctx, 1));
 	check(ctx.stack_a, ctx.stack_b);
 	return (free_ctx(&ctx, 0));

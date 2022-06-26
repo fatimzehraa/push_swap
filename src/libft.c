@@ -6,18 +6,20 @@
 /*   By: fael-bou <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/17 13:55:29 by fael-bou          #+#    #+#             */
-/*   Updated: 2022/06/26 12:33:15 by fael-bou         ###   ########.fr       */
+/*   Updated: 2022/06/26 15:58:56 by fael-bou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "list.h"
 #include "push_swap.h"
+#include <linux/limits.h>
 #include <stdlib.h>
+#include <limits.h>
 
-int	ft_atoi(char *str)
+long	ft_atoi(char *str)
 {
-	int	i;
-	int	k;
-	int	number;
+	int		i;
+	int		k;
+	long	number;
 
 	i = 0;
 	k = 1;
@@ -54,14 +56,15 @@ int	ft_strchr(char *str, char c)
 
 int	is_all_number(char **str)
 {
-	int	i;
-	int	j;
+	int		i;
+	int		j;
+	long	n;
 
 	i = 0;
 	while (str[i])
 	{
 		j = 0;
-		if (str[i][j] == '-')
+		if (str[i][j] == '-' || str[i][j] == '-')
 			j++;
 		while (str[i][j])
 		{
@@ -69,6 +72,9 @@ int	is_all_number(char **str)
 				return (0);
 			j++;
 		}
+		n = ft_atoi(str[i]);
+		if (n > INT_MAX || n < INT_MIN)
+			return (0);
 		i++;
 	}
 	return (1);

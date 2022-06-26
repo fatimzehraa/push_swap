@@ -6,7 +6,7 @@
 /*   By: fael-bou <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/26 12:26:00 by fael-bou          #+#    #+#             */
-/*   Updated: 2022/06/26 12:26:32 by fael-bou         ###   ########.fr       */
+/*   Updated: 2022/06/26 15:52:57 by fael-bou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,6 +41,6 @@ int	free_ctx(t_ctx *ctx, int is_error)
 	if (ctx->stack_b != NULL)
 		ft_lstclear(&(ctx->stack_b));
 	if (is_error)
-		ft_putstr("Error\n");
+		ft_putstr("Error");
 	return (0);
 }
