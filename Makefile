@@ -6,7 +6,7 @@
 #    By: fael-bou <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/05/31 11:06:19 by fael-bou          #+#    #+#              #
-#    Updated: 2022/06/26 13:01:33 by fael-bou         ###   ########.fr        #
+#    Updated: 2022/06/26 13:55:10 by fael-bou         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -55,7 +55,7 @@ clean :
 	rm -rf $(BUILD_DIR)
 
 fclean : clean
-	rm -f $(NAME)
+	rm -f $(NAME) $(BONUS_NAME)
 
 re : fclean all
 
