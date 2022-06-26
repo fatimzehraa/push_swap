@@ -6,7 +6,7 @@
 #    By: fael-bou <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/05/31 11:06:19 by fael-bou          #+#    #+#              #
-#    Updated: 2022/06/25 14:53:48 by fatimzehra       ###   ########.fr        #
+#    Updated: 2022/06/26 13:01:33 by fael-bou         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -16,7 +16,7 @@ INCLUDE = -I./inc
 
 BUILD_DIR = build
 
-FILES = main.o position.o sort.o split.o libft.o free.o duplicate.o\
+FILES = main.o position.o sort.o mini_sort.o split.o libft.o free.o duplicate.o\
 	utils/push.o utils/swap.o utils/rotate.o utils/reverse_rotate.o\
 	lists/ft_lstadd_back.o lists/ft_lstclear.o \
 	lists/ft_lstsize.o lists/ft_lstadd_front.o \

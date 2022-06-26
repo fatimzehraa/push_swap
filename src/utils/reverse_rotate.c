@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   reverse_rotate.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: fatimzehra </var/spool/mail/fatimzehra>    +#+  +:+       +#+        */
+/*   By: fael-bou <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/06/06 00:14:03 by fatimzehra        #+#    #+#             */
-/*   Updated: 2022/06/25 14:49:42 by fatimzehra       ###   ########.fr       */
+/*   Created: 2022/06/06 00:14:03 by fael-bou          #+#    #+#             */
+/*   Updated: 2022/06/26 12:34:41 by fael-bou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,10 +15,9 @@
 
 void	reverse_rotate(t_list **stack)
 {
-
-	t_list *curr;
-	t_list *befor_last;
-	t_list *last_node;
+	t_list	*curr;
+	t_list	*befor_last;
+	t_list	*last_node;
 
 	curr = *stack;
 	if (ft_lstsize(curr) < 2)
@@ -47,7 +46,7 @@ void	rrb(t_list **stack_b)
 	ft_putstr("rrb");
 }
 
-void rrr(t_list **stack_a, t_list **stack_b)
+void	rrr(t_list **stack_a, t_list **stack_b)
 {
 	reverse_rotate(stack_a);
 	reverse_rotate(stack_b);

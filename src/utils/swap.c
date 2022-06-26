@@ -6,7 +6,7 @@
 /*   By: fael-bou <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/01 11:58:56 by fael-bou          #+#    #+#             */
-/*   Updated: 2022/06/21 10:32:07 by fatimzehra       ###   ########.fr       */
+/*   Updated: 2022/06/26 12:34:12 by fael-bou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,10 +14,11 @@
 #include "push_swap.h"
 #include <stdio.h>
 
-void	swap(t_list **stack) {
-	t_list *node_1;
-	t_list *node_2;
-	t_list *tmp;
+void	swap(t_list **stack)
+{
+	t_list	*node_1;
+	t_list	*node_2;
+	t_list	*tmp;
 
 	if (ft_lstsize(*stack) > 1)
 	{

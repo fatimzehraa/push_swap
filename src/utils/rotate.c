@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   rotate.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: fatimzehra </var/spool/mail/fatimzehra>    +#+  +:+       +#+        */
+/*   By: fael-bou <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/06/03 15:21:38 by fatimzehra        #+#    #+#             */
-/*   Updated: 2022/06/21 08:11:59 by fatimzehra       ###   ########.fr       */
+/*   Created: 2022/06/03 15:21:38 by fael-bou          #+#    #+#             */
+/*   Updated: 2022/06/26 12:34:24 by fael-bou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@
 
 void	rotate(t_list **stack)
 {
-	t_list *last_node;
+	t_list	*last_node;
 
 	if (ft_lstsize(*stack) < 2)
 		return ;
@@ -38,7 +38,7 @@ void	rb(t_list **stack_b)
 	ft_putstr("rb");
 }
 
-void rr(t_list **stack_a, t_list **stack_b)
+void	rr(t_list **stack_a, t_list **stack_b)
 {
 	rotate(stack_a);
 	rotate(stack_b);

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   checker_bonus.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: fatimzehra </var/spool/mail/fatimzehra>    +#+  +:+       +#+        */
+/*   By: fael-bou <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/06/22 09:08:42 by fatimzehra        #+#    #+#             */
-/*   Updated: 2022/06/25 19:49:18 by fatimzehra       ###   ########.fr       */
+/*   Created: 2022/06/22 09:08:42 by fael-bou          #+#    #+#             */
+/*   Updated: 2022/06/26 12:32:27 by fael-bou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 #include "get_next_line.h"
 #include <unistd.h>
 
-int	do_instructions(t_list **stack_a, t_list **stack_b, char * instraction)
+int	do_instructions(t_list **stack_a, t_list **stack_b, char *instraction)
 {
 	if (ft_strcmp(instraction, "sa\n") == 0)
 		sa(stack_a);
@@ -48,10 +48,24 @@ void	check(t_list *stack_a, t_list *stack_b)
 {
 	if (is_sorted(stack_a) && stack_b == NULL)
 		ft_putstr("OK");
-	else 
+	else
 		ft_putstr("KO");
 }
-	
+
+int	read_instractions(t_ctx ctx)
+{
+	char	*line;
+
+	while (1)
+	{
+		line = get_next_line(0);
+		if (line == 0)
+			break ;
+		if (!do_instructions(&ctx.stack_a, &ctx.stack_b, line))
+			return (0);
+	}
+	return (1);
+}
 
 int	main(int argc, char**argv)
 {
@@ -62,28 +76,20 @@ int	main(int argc, char**argv)
 	if (argc == 1)
 		return (0);
 	else if (argc == 2 && ft_strchr(argv[1], ' '))
-		ctx.splited_nb = ft_split(argv[1], ' ');
+		ctx.splited = ft_split(argv[1], ' ');
 	else
-		ctx.splited_nb = ft_duplicate(argc, argv);
-	if (!is_all_number(ctx.splited_nb) || is_duplicated_number(ctx.splited_nb))
+		ctx.splited = ft_duplicate(argc, argv);
+	if (!is_all_number(ctx.splited) || is_duplicated_number(ctx.splited))
 		return (free_ctx(&ctx, 1));
-	// Logique
 	i = 0;
-	while (ctx.splited_nb[i])
+	while (ctx.splited[i])
 	{
-		ft_lstadd_back(&(ctx.stack_a), ft_lstnew(ft_atoi(ctx.splited_nb[i]), i));
+		ft_lstadd_back(&(ctx.stack_a), ft_lstnew(ft_atoi(ctx.splited[i]), i));
 		i++;
 	}
 	position(ctx.stack_a);
-	while (1)
-	{
-		char *line;
-		line = get_next_line(0);
-		if (line == 0)
-			break;
-		if (!do_instructions(&ctx.stack_a, &ctx.stack_b, line))
-			return (free_ctx(&ctx, 1));
-	}
+	if (read_instractions(ctx) == 0)
+		return (free_ctx(&ctx, 1));
 	check(ctx.stack_a, ctx.stack_b);
 	return (free_ctx(&ctx, 0));
 }

@@ -3,21 +3,21 @@
 /*                                                        :::      ::::::::   */
 /*   libft.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: fatimzehra </var/spool/mail/fatimzehra>    +#+  +:+       +#+        */
+/*   By: fael-bou <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/06/17 13:55:29 by fatimzehra        #+#    #+#             */
-/*   Updated: 2022/06/24 20:55:52 by fatimzehra       ###   ########.fr       */
+/*   Created: 2022/06/17 13:55:29 by fael-bou          #+#    #+#             */
+/*   Updated: 2022/06/26 12:33:15 by fael-bou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "list.h"
 #include "push_swap.h"
 #include <stdlib.h>
 
-int ft_atoi(char *str)
+int	ft_atoi(char *str)
 {
-	int i;
-	int k;
-	int number;
+	int	i;
+	int	k;
+	int	number;
 
 	i = 0;
 	k = 1;
@@ -38,14 +38,14 @@ int ft_atoi(char *str)
 
 int	ft_strchr(char *str, char c)
 {
-	int i;
+	int	i;
 
 	if (str == NULL)
 		return (0);
 	i = 0;
 	while (str[i])
 	{
-		if (str[i] == c) 
+		if (str[i] == c)
 			return (1);
 		i++;
 	}
@@ -54,8 +54,8 @@ int	ft_strchr(char *str, char c)
 
 int	is_all_number(char **str)
 {
-	int i;
-	int j;
+	int	i;
+	int	j;
 
 	i = 0;
 	while (str[i])
@@ -76,7 +76,7 @@ int	is_all_number(char **str)
 
 void	ft_putstr(char *str)
 {
-	int i;
+	int	i;
 
 	i = 0;
 	while (str[i])
@@ -89,7 +89,7 @@ void	ft_putstr(char *str)
 
 int	ft_strlen(const char *s)
 {
-	int i;
+	int	i;
 
 	i = 0;
 	if (s == NULL)

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   swap_bonus.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: fatimzehra </var/spool/mail/fatimzehra>    +#+  +:+       +#+        */
+/*   By: fael-bou <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/06/25 14:40:04 by fatimzehra        #+#    #+#             */
-/*   Updated: 2022/06/25 14:41:10 by fatimzehra       ###   ########.fr       */
+/*   Created: 2022/06/26 13:18:26 by fael-bou          #+#    #+#             */
+/*   Updated: 2022/06/26 13:19:35 by fael-bou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,10 +14,11 @@
 #include "push_swap.h"
 #include <stdio.h>
 
-void	swap(t_list **stack) {
-	t_list *node_1;
-	t_list *node_2;
-	t_list *tmp;
+void	swap(t_list **stack)
+{
+	t_list	*node_1;
+	t_list	*node_2;
+	t_list	*tmp;
 
 	if (ft_lstsize(*stack) > 1)
 	{

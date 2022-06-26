@@ -1,17 +1,15 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_bonus.c                                       :+:      :+:    :+:   */
+/*   mini_sort.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: fael-bou <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/06/26 13:16:10 by fael-bou          #+#    #+#             */
-/*   Updated: 2022/06/26 13:18:06 by fael-bou         ###   ########.fr       */
+/*   Created: 2022/06/26 12:59:56 by fael-bou          #+#    #+#             */
+/*   Updated: 2022/06/26 13:00:59 by fael-bou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-#include "list.h"
 #include "push_swap.h"
-#include <stdio.h>
 
 int	is_sorted(t_list *stack_a)
 {
@@ -30,24 +28,31 @@ int	is_sorted(t_list *stack_a)
 	return (1);
 }
 
-void	pa(t_list **stack_a, t_list **stack_b)
+void	sort_3(t_list **stack_a, int start)
 {
-	t_list	*tmp;
-
-	if (*stack_b == NULL)
+	if ((*stack_a)->p == start + 1 && (*stack_a)->next->p == start + 0)
+		sa(stack_a);
+	else if ((*stack_a)->p == start + 2 && (*stack_a)->next->p == start + 0)
+		ra(stack_a);
+	else if ((*stack_a)->p == start + 1 && (*stack_a)->next->p == start + 2)
+		rra(stack_a);
+	if (is_sorted(*stack_a))
 		return ;
-	tmp = (*stack_b)->next;
-	ft_lstadd_front(stack_a, *stack_b);
-	*stack_b = tmp;
+	else
+		sa(stack_a);
+	sort_3(stack_a, start);
 }
 
-void	pb(t_list **stack_a, t_list **stack_b)
+void	sort_5(t_list **stack_a, t_list **stack_b)
 {
-	t_list	*tmp;
+	int	size;
 
-	if (*stack_a == NULL)
-		return ;
-	tmp = (*stack_a)->next;
-	ft_lstadd_front(stack_b, *stack_a);
-	*stack_a = tmp;
+	size = ft_lstsize(*stack_a);
+	if (size > 3)
+		push_node_b(stack_a, stack_b, 0, size / 2);
+	if (size > 4)
+		push_node_b(stack_a, stack_b, 1, size / 2);
+	sort_3(stack_a, size - 3);
+	pa(stack_a, stack_b);
+	pa(stack_a, stack_b);
 }

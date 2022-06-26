@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   position.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: fatimzehra </var/spool/mail/fatimzehra>    +#+  +:+       +#+        */
+/*   By: fael-bou <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/06/06 18:02:47 by fatimzehra        #+#    #+#             */
-/*   Updated: 2022/06/12 13:35:46 by fatimzehra       ###   ########.fr       */
+/*   Created: 2022/06/06 18:02:47 by fael-bou          #+#    #+#             */
+/*   Updated: 2022/06/26 12:33:40 by fael-bou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,6 @@
 void	position(t_list *stack_a)
 {
 	t_list	*curr;
-
 
 	while (stack_a)
 	{
@@ -35,7 +34,7 @@ void	position(t_list *stack_a)
 
 int	p_index(t_list *stack_a, int position)
 {
-	int i;
+	int	i;
 
 	i = 0;
 	while (stack_a)

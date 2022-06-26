@@ -6,23 +6,23 @@
 /*   By: fael-bou <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/30 21:57:28 by fael-bou          #+#    #+#             */
-/*   Updated: 2022/06/24 19:26:13 by fatimzehra       ###   ########.fr       */
+/*   Updated: 2022/06/26 12:31:21 by fael-bou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef PUSH_SWAP_H
 # define PUSH_SWAP_H
 
-#include <stdlib.h>
-#include <unistd.h>
-#include <stdio.h>
-#include "list.h"
+# include <stdlib.h>
+# include <unistd.h>
+# include <stdio.h>
+# include "list.h"
 
 typedef struct s_ctx{
 	t_list	*stack_a;
 	t_list	*stack_b;
-	char	**splited_nb;
-} t_ctx;
+	char	**splited;
+}	t_ctx;
 
 void	pa(t_list **stack_a, t_list **stack_b);
 void	pb(t_list **stack_a, t_list **stack_b);
@@ -38,7 +38,7 @@ void	rrr(t_list **stack_a, t_list **stack_b);
 int		ft_strlen(const char *s);
 int		ft_atoi(char *str);
 int		ft_strchr(char *str, char c);
-int	ft_strcmp(char *s1, char *s2);
+int		ft_strcmp(char *s1, char *s2);
 int		is_all_number(char **str);
 void	ft_putstr(char *str);
 char	**ft_duplicate(int argc, char **argv);
@@ -56,9 +56,9 @@ void	sort_5(t_list **stack_a, t_list **stack_b);
 void	sort_100(t_list **stack_a, t_list **stack_b, int chunk);
 void	sort(int size_a, t_list **stack_a, t_list **stack_b);
 int		is_sorted(t_list *stack_a);
-int	get_closest(int position, t_list *stack_b);
+int		get_closest(int position, t_list *stack_b);
 
 void	free_tab(char **splitted_nb);
 void	init_ctx(t_ctx *ctx);
-int	free_ctx(t_ctx *ctx, int is_error);
+int		free_ctx(t_ctx *ctx, int is_error);
 #endif

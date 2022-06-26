@@ -6,7 +6,7 @@
 /*   By: fael-bou <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/30 21:56:23 by fael-bou          #+#    #+#             */
-/*   Updated: 2022/06/25 13:13:37 by fatimzehra       ###   ########.fr       */
+/*   Updated: 2022/06/26 12:33:01 by fael-bou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,9 @@
 #include "push_swap.h"
 #include <stdio.h>
 
-void pa(t_list **stack_a, t_list **stack_b)
+void	pa(t_list **stack_a, t_list **stack_b)
 {
-	t_list *tmp;
+	t_list	*tmp;
 
 	if (*stack_b == NULL)
 		return ;
@@ -26,9 +26,9 @@ void pa(t_list **stack_a, t_list **stack_b)
 	ft_putstr("pa");
 }
 
-void pb(t_list **stack_a, t_list **stack_b)
+void	pb(t_list **stack_a, t_list **stack_b)
 {
-	t_list *tmp;
+	t_list	*tmp;
 
 	if (*stack_a == NULL)
 		return ;
@@ -88,8 +88,10 @@ void	push_node_a(t_list **stack_a, t_list **stack_b, int position, int mid)
 
 int	get_closest(int position, t_list *stack_b)
 {
-	int i;
+	int	i;
+	int	size;
 
+	size = ft_lstsize(stack_b);
 	i = 0;
 	while (stack_b)
 	{
@@ -98,8 +100,8 @@ int	get_closest(int position, t_list *stack_b)
 		i++;
 		stack_b = stack_b->next;
 	}
-	if (i < ft_lstsize(stack_b)/2)
+	if (i < size / 2)
 		return (i);
-	else 
-		return (ft_lstsize(stack_b) - i);
+	else
+		return (size - i);
 }

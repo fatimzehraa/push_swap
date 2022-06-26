@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   duplicate.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: fatimzehra </var/spool/mail/fatimzehra>    +#+  +:+       +#+        */
+/*   By: fael-bou <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/06/21 09:12:17 by fatimzehra        #+#    #+#             */
-/*   Updated: 2022/06/21 09:13:26 by fatimzehra       ###   ########.fr       */
+/*   Created: 2022/06/21 09:12:17 by fael-bou          #+#    #+#             */
+/*   Updated: 2022/06/26 12:33:52 by fael-bou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,28 +30,27 @@ char	*ft_strdup(const char *s1)
 	return (str);
 }
 
-char **ft_duplicate(int argc, char **argv)
+char	**ft_duplicate(int argc, char **argv)
 {
-	int i;
+	int		i;
+	char	**splited;
 
-	char **splitted_nb;
-
-	splitted_nb = malloc(argc * sizeof(char **));
-	if (splitted_nb == NULL)
+	splited = malloc(argc * sizeof(char **));
+	if (splited == NULL)
 		return (NULL);
 	i = 0;
 	while (i < argc - 1)
 	{
-		splitted_nb[i] = ft_strdup(argv[i + 1]);
+		splited[i] = ft_strdup(argv[i + 1]);
 		i++;
 	}
-	splitted_nb[i] = NULL;
-	return (splitted_nb);
+	splited[i] = NULL;
+	return (splited);
 }
 
 int	ft_strcmp(char *s1, char *s2)
 {
-	int i;
+	int	i;
 
 	i = 0;
 	while (s1[i] || s2[i])
@@ -65,8 +64,8 @@ int	ft_strcmp(char *s1, char *s2)
 
 int	is_duplicated_number(char **splitted_nb)
 {
-	int i;
-	int j;
+	int	i;
+	int	j;
 
 	i = 0;
 	while (splitted_nb[i])

@@ -3,23 +3,21 @@
 /*                                                        :::      ::::::::   */
 /*   reverse_rotate_bonus.c                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: fatimzehra </var/spool/mail/fatimzehra>    +#+  +:+       +#+        */
+/*   By: fael-bou <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/06/25 14:49:00 by fatimzehra        #+#    #+#             */
-/*   Updated: 2022/06/25 14:49:16 by fatimzehra       ###   ########.fr       */
+/*   Created: 2022/06/26 13:21:33 by fael-bou          #+#    #+#             */
+/*   Updated: 2022/06/26 13:22:28 by fael-bou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
 
 #include "list.h"
 #include "push_swap.h"
 
 void	reverse_rotate(t_list **stack)
 {
-
-	t_list *curr;
-	t_list *befor_last;
-	t_list *last_node;
+	t_list	*curr;
+	t_list	*befor_last;
+	t_list	*last_node;
 
 	curr = *stack;
 	if (ft_lstsize(curr) < 2)
@@ -46,7 +44,7 @@ void	rrb(t_list **stack_b)
 	reverse_rotate(stack_b);
 }
 
-void rrr(t_list **stack_a, t_list **stack_b)
+void	rrr(t_list **stack_a, t_list **stack_b)
 {
 	reverse_rotate(stack_a);
 	reverse_rotate(stack_b);
