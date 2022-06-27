@@ -64,7 +64,7 @@ int	is_all_number(char **str)
 	while (str[i])
 	{
 		j = 0;
-		if (str[i][j] == '-' || str[i][j] == '-')
+		if (str[i][j] == '-' || str[i][j] == '+')
 			j++;
 		while (str[i][j])
 		{
